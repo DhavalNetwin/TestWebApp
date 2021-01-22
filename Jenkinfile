@@ -1,4 +1,4 @@
-//def ReleaseDir = "D:\\Dhaval\\TryoutsProjects\\TestWebApp\\TestWebApp\\bin\\app.publish"
+//def ReleaseDir = "c:\inetpub\wwwroot"
 pipeline {
 			agent any
 			stages {
@@ -9,7 +9,7 @@ pipeline {
 				}
 				stage('Build') {
     					steps {
-    					    bat "\"${tool 'MSBuild'}\" TestWebApp.sln /p:DeployOnBuild=true /p:DeployDefaultTarget=WebPublish /p:WebPublishMethod=FileSystem /p:SkipInvalidConfigurations=true /t:build /p:Configuration=Release /p:Platform=\"Any CPU\" /p:DeleteExistingFiles=True /p:publishUrl=D:\\Dhaval\\TryoutsProjects\\TestWebApp\\TestWebApp\\bin\\app.publish"
+    					    bat "\"${tool 'MSBuild'}\" TestWebApp.sln /p:DeployOnBuild=true /p:DeployDefaultTarget=WebPublish /p:WebPublishMethod=FileSystem /p:SkipInvalidConfigurations=true /t:build /p:Configuration=Release /p:Platform=\"Any CPU\" /p:DeleteExistingFiles=True /p:publishUrl=c:\inetpub\wwwroot"
     					}
 				}
 			}
